@@ -12,7 +12,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $semuaMenu = \App\Models\Menu::all();
+        return view('admin.index', compact('semuaMenu'));
     }
 
     /**
@@ -20,7 +21,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -28,7 +29,28 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input menu
+        $request->validate([
+            'nama_menu' => 'required',
+            'kategori' => 'required',
+            'harga' => 'required|numeric',
+            'foto' => 'required|image|mimes:jpg,png,jpeg',
+        ]);
+
+        // Cek foto yang diupload
+        $namaFoto = time(). '.' . $request->foto->extension();
+        $request ->foto->move(public_path('images'), $namaFoto);
+
+        // Masukkan data ke db_cafe
+        \App\Models\Menu::created([
+            'nama_menu' => $request->nama_menu,
+            'kategori' => $request->kategori,
+            'harga' => $request->harga,
+            'foto' => $namaFoto,
+        ]);
+
+        // Kembali ke halaman tabel admin
+        return redirect()->route('admin.menu.index');
     }
 
     /**
