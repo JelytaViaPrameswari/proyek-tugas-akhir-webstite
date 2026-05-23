@@ -6,7 +6,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav gap-2" style="font-size: 15px;">
+            <ul class="navbar-nav ms-auto gap-2" style="font-size: 15px;">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
@@ -16,8 +16,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/profil">Tentang Kami</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#reservasi">Kontak</a>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-warning text-dark fw-bold rounded-pill px-4 btn-sm" href="#reservasi" target="_blank">Reservasi Meja</a>
                 </li>
             </ul>
         </div>
