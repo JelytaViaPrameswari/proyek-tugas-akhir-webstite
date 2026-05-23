@@ -11,10 +11,14 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/menu">Menu</a>
+                    <a class="nav-link" href="#profil">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/profil">Tentang Kami</a>
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="/admin/menu" style="font-size: 13px;">Admin</a>
                 </li>
                 <li class="nav-item ms-lg-2">
                     <a class="btn btn-warning text-dark fw-bold rounded-pill px-4 btn-sm" href="#reservasi" target="_blank">Reservasi Meja</a>
